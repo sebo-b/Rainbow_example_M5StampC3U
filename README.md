@@ -18,7 +18,7 @@ It touches on the following areas:
 
 ## How to build and install
 
-This may be enough to (read official IDF documentation for more details):
+This may be enough to build and flash (read the official IDF documentation for more details):
 ```
 idf.py build
 cd build

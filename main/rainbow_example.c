@@ -4,6 +4,7 @@
 #include "freertos/task.h"
 #include "driver/gpio.h"
 #include "led_strip.h"
+#include "esp_log.h"
 
 #include "rainbow.h"
 
@@ -77,6 +78,7 @@ void led_task_f(void* pvParam) {
         // divide by 4 to dim the led
         led_strip_set_pixel(ledStripHandle, 0, color[0]>>2, color[1]>>2, color[2]>>2);
         led_strip_refresh(ledStripHandle);
+
         color_next(color,4);
 
         r = ulTaskNotifyTake(pdTRUE,50 / portTICK_PERIOD_MS);

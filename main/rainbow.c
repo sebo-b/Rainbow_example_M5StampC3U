@@ -8,7 +8,7 @@ static int _add_in_range(uint8_t* value, int step) {
     int ret = 0;
 
     if (tmp > 255) {
-        ret = 255 - tmp;
+        ret = tmp - 255;
         tmp = 255;
     }
     else if (tmp < 0) {
@@ -20,7 +20,7 @@ static int _add_in_range(uint8_t* value, int step) {
     return ret;
 }
 
-static unsigned int _color_next(rainbow_color_t c, unsigned int step) {
+static unsigned int _color_next(rainbow_color_t c, int step) {
 
     for (int i = 0; i <3; ++i) {
 
